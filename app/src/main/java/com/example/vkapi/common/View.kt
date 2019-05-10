@@ -10,10 +10,6 @@ fun ImageView.loadImage(url: String){
     Glide.with(this).load(url).into(this)
 }
 
-fun loadViewHolder(layoutId: Int, viewGroup: ViewGroup, attachToRoot: Boolean): View {
-    return LayoutInflater.from(viewGroup.context).inflate(layoutId, viewGroup, attachToRoot)
-}
-
 fun ViewGroup.inflate(layoutId: Int, attachToRoot: Boolean): View =
     LayoutInflater.from(context)
         .inflate(layoutId, this, attachToRoot)
