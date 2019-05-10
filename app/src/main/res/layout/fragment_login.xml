@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="vertical"
+        android:padding="@dimen/login_view_padding"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <com.rengwuxian.materialedittext.MaterialEditText
+            android:id="@+id/email"
+            android:hint="@string/email"
+            android:inputType="text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+    <com.rengwuxian.materialedittext.MaterialEditText
+            android:id="@+id/password"
+            android:hint="@string/password"
+            android:inputType="textPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+    <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/input"
+            android:id="@+id/loginButton"
+            android:background="@drawable/login_button"
+            android:layout_marginTop="@dimen/text_margin_top"
+            android:textColor="@color/white"
+            style="?android:attr/borderlessButtonStyle"/>
+
+</LinearLayout>

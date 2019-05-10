@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="height_post_image">300dp</dimen>
+    <dimen name="height_profile_image">250dp</dimen>
+    <dimen name="login_view_padding">16dp</dimen>
+    <dimen name="margin_bottom">16dp</dimen>
+    <dimen name="name_margin_bottom">24dp</dimen>
+    <dimen name="text_margin_start">10dp</dimen>
+    <dimen name="text_margin_top">10dp</dimen>
+    <dimen name="post_margin_top">4dp</dimen>
+    <dimen name="post_margin_bottom">8dp</dimen>
+    <dimen name="edit_margin_bottom">8dp</dimen>
+
+    <!--Sizes-->
+    <dimen name="small_text">12sp</dimen>
+    <dimen name="normal_text_size">16sp</dimen>
+    <dimen name="title_text_size">24sp</dimen>
+</resources>

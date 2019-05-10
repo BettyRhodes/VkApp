@@ -1,0 +1,29 @@
+<resources>
+    <string name="app_name">VkApi</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="name">Name</string>
+    <string name="birthday">День рождения</string>
+    <string name="_birthday">Дата рождения</string>
+    <string name="city">Город</string>
+    <string name="email">Email или телефон</string>
+    <string name="password">Пароль</string>
+    <string name="input">войти</string>
+    <string name="login">Login</string>
+    <string name="lastName">Фамилия</string>
+    <string name="firstName">Имя</string>
+    <string name="profile">Профиль</string>
+    <string name="edit">Редактировать</string>
+
+    <!--Login-->
+    <string name="emptyEmail">Email is empty</string>
+    <string name="emptyPassword">Password is empty</string>
+    <string name="loginError">Incorrect data</string>
+
+    <!--Edit-->
+    <string name="emptyName">Name is empty</string>
+    <string name="emptySurname">Surname is empty</string>
+    <string name="__birthday">Дата</string>
+    <string name="posts">Записи</string>
+</resources>
