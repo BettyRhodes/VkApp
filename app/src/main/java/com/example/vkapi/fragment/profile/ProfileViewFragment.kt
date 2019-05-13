@@ -8,6 +8,7 @@ import com.example.vkapi.R
 import com.example.vkapi.common.loadImage
 import com.example.vkapi.fragment.BaseFragment
 import com.example.vkapi.fragment.profile.adapter.FeedAdapter
+import com.example.vkapi.fragment.profile.messages.BaseMessage
 import kotlinx.android.synthetic.main.fragment_profile_view.*
 
 class ProfileViewFragment: BaseFragment(R.layout.fragment_profile_view), ProfileView {

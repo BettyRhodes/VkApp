@@ -1,4 +1,4 @@
-package com.example.vkapi.fragment.profile
+package com.example.vkapi.fragment.profile.messages
 
 class PostMessage(
     id: Int,

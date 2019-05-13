@@ -1,25 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
         android:orientation="vertical"
         android:padding="@dimen/login_view_padding"
         android:gravity="center"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-    <com.rengwuxian.materialedittext.MaterialEditText
-            android:id="@+id/email"
-            android:hint="@string/email"
-            android:inputType="text"
+    <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textInputEmail"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:hint="@string/email">
 
-    <com.rengwuxian.materialedittext.MaterialEditText
-            android:id="@+id/password"
-            android:hint="@string/password"
-            android:inputType="textPassword"
+        <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/email"
+                android:inputType="text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textInputPassword"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:hint="@string/password"
+            app:passwordToggleEnabled="true">
+
+        <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/password"
+                android:inputType="textPassword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+    </com.google.android.material.textfield.TextInputLayout>
 
     <Button
             android:layout_width="match_parent"

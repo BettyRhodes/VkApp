@@ -1,6 +1,7 @@
 package com.example.vkapi.fragment.profile
 
 import com.arellomobile.mvp.MvpView
+import com.example.vkapi.fragment.profile.messages.BaseMessage
 
 interface ProfileView: MvpView {
     fun showProfile(image: String, firstName: String, lastName: String, birthday: String, city: String)

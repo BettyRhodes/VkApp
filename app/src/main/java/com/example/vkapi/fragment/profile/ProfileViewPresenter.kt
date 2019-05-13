@@ -3,6 +3,8 @@ package com.example.vkapi.fragment.profile
 import com.arellomobile.mvp.InjectViewState
 import com.arellomobile.mvp.MvpPresenter
 import com.example.vkapi.App
+import com.example.vkapi.fragment.profile.messages.CatMessage
+import com.example.vkapi.fragment.profile.messages.PostMessage
 import com.example.vkapi.navigation.Screen
 
 @InjectViewState
@@ -25,7 +27,11 @@ class ProfileViewPresenter : MvpPresenter<ProfileView>() {
                     "https://ichef.bbci.co.uk/images/ic/720x405/p0517py6.jpg"
                 )
             }else {
-                PostMessage(it, "Message ".repeat(30), "https://picsum.photos/id/$it/200/300")
+                PostMessage(
+                    it,
+                    "Message ".repeat(30),
+                    "https://picsum.photos/id/$it/200/300"
+                )
             }
         })
     }

@@ -4,9 +4,9 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.vkapi.R
 import com.example.vkapi.common.inflate
-import com.example.vkapi.fragment.profile.BaseMessage
-import com.example.vkapi.fragment.profile.CatMessage
-import com.example.vkapi.fragment.profile.PostMessage
+import com.example.vkapi.fragment.profile.messages.BaseMessage
+import com.example.vkapi.fragment.profile.messages.CatMessage
+import com.example.vkapi.fragment.profile.messages.PostMessage
 import kotlin.IllegalArgumentException
 
 class FeedAdapter: RecyclerView.Adapter<RecyclerView.ViewHolder>() {
