@@ -17,9 +17,9 @@
     <string name="edit">Редактировать</string>
 
     <!--Login-->
-    <string name="emptyEmail">Email is empty</string>
-    <string name="emptyPassword">Password is empty</string>
-    <string name="loginError">Incorrect data</string>
+    <string name="emptyField">Пустое поле</string>
+    <string name="invalidPassword">Неверный пароль</string>
+    <string name="loginError">Неверные данные</string>
 
     <!--Edit-->
     <string name="emptyName">Name is empty</string>

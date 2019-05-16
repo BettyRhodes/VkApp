@@ -12,4 +12,16 @@
         <item name="android:background">@android:color/white</item>
     </style>
 
+    <style name="AppTheme.LoginButton" parent="Widget.MaterialComponents.Button.OutlinedButton">
+        <item name="strokeColor">@color/darkGrey</item>
+        <item name="strokeWidth">1dp</item>
+        <item name="android:textColor">@android:color/white</item>
+    </style>
+
+    <style name="ThemeOverlay.TextInputEditText.OutlinedBox" parent="ThemeOverlay.MaterialComponents.TextInputEditText.OutlinedBox">
+        <item name="android:textColorHint">@color/white</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="passwordToggleTint">@android:color/white</item>
+    </style>
+
 </resources>
