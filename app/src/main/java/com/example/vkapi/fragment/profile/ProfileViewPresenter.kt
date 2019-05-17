@@ -3,8 +3,8 @@ package com.example.vkapi.fragment.profile
 import com.arellomobile.mvp.InjectViewState
 import com.arellomobile.mvp.MvpPresenter
 import com.example.vkapi.App
-import com.example.vkapi.fragment.profile.messages.CatMessage
-import com.example.vkapi.fragment.profile.messages.PostMessage
+import com.example.vkapi.entites.Profile
+import com.example.vkapi.entites.PostMessage
 import com.example.vkapi.navigation.Screen
 
 @InjectViewState
@@ -14,33 +14,78 @@ class ProfileViewPresenter : MvpPresenter<ProfileView>() {
         super.onFirstViewAttach()
 
         viewState.showProfile(
-            "https://pp.userapi.com/c543105/v543105493/4df68/YGNqZ3NCgHI.jpg",
-            "Юрий",
-            "Пожидаев",
-            "30 июня 1998",
-            "Atlanta")
+            Profile(
+                1,
+                "Юрий",
+                "Пожидаев",
+                "https://pbs.twimg.com/profile_images/1129032835006812160/FyzA9DWR_400x400.jpg",
+                "Атланта",
+                "30 июня 1998",
+                ""
+            )
+        )
 
-        viewState.showFeed((1..100).map{
-            if(it % 5 == 0){
-                CatMessage(
-                    it,
-                    "https://ichef.bbci.co.uk/images/ic/720x405/p0517py6.jpg"
-                )
-            }else {
+        viewState.showFeed(
+            listOf(
                 PostMessage(
-                    it,
-                    "Message ".repeat(30),
-                    "https://picsum.photos/id/$it/200/300"
+                    1,
+                    "Юрий Пожидаев",
+                    "Только сообщение",
+                    "",
+                    "",
+                    "",
+                    "",
+                    "14 мая 2019",
+                    10
+                ), PostMessage(
+                    4,
+                    "Юрий Пожидаев",
+                    "Классная песня",
+                    "",
+                    "",
+                    "Murder On My Mind",
+                    "YNW Melly",
+                    "13 мая 2019",
+                    17
                 )
-            }
-        })
+                , PostMessage(
+                    2,
+                    "Юрий Пожидаев",
+                    "Пост с картинкой",
+                    "https://avatars.mds.yandex.net/get-pdb/199965/10d413ef-60a6-4d84-b4e8-75cf6e7a86d9/s1200",
+                    "",
+                    "",
+                    "",
+                    "12 мая 2019",
+                    23
+                ), PostMessage(
+                    4, "Юрий Пожидаев",
+                    "Пост с видео",
+                    "",
+                    "Video",
+                    "",
+                    "",
+                    "11 мая 2019",
+                    32
+                ), PostMessage(
+                    5, "Юрий Пожидаев",
+                    "Полный пост",
+                    "https://avatars.mds.yandex.net/get-pdb/199965/10d413ef-60a6-4d84-b4e8-75cf6e7a86d9/s1200",
+                    "Video",
+                    "Murder On My Mind",
+                    "YNW Melly",
+                    "5 мая 2019",
+                    21
+                )
+            )
+        )
     }
 
-    fun profileEdit(){
+    fun profileEdit() {
         App.INSTANCE.router.navigateTo(Screen.EditScreen())
     }
 
-    fun logout(){
+    fun logout() {
         App.INSTANCE.router.replaceScreen(Screen.LoginScreen())
     }
 }

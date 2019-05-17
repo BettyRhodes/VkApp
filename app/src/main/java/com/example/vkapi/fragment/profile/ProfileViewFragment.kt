@@ -5,10 +5,12 @@ import android.view.View
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.arellomobile.mvp.presenter.InjectPresenter
 import com.example.vkapi.R
-import com.example.vkapi.common.loadImage
+import com.example.vkapi.entites.BaseItem
+import com.example.vkapi.entites.PostMessage
+import com.example.vkapi.entites.Profile
+import com.example.vkapi.extensions.loadImage
 import com.example.vkapi.fragment.BaseFragment
 import com.example.vkapi.fragment.profile.adapter.FeedAdapter
-import com.example.vkapi.fragment.profile.messages.BaseMessage
 import kotlinx.android.synthetic.main.fragment_profile_view.*
 
 class ProfileViewFragment: BaseFragment(R.layout.fragment_profile_view), ProfileView {
@@ -25,26 +27,23 @@ class ProfileViewFragment: BaseFragment(R.layout.fragment_profile_view), Profile
     }
 
     private fun initFeed(){
-        profileViewFeed.isNestedScrollingEnabled = false
-        profileViewFeed.layoutManager = LinearLayoutManager(context)
-        profileViewFeed.adapter = feedAdapter
+        profileFeed.layoutManager = LinearLayoutManager(context)
+        profileFeed.adapter = feedAdapter
     }
 
-    override fun showProfile(image: String, firstName: String, lastName: String, birthday: String, city: String) {
-        avatar.loadImage("https://pp.userapi.com/c543105/v543105493/4df68/YGNqZ3NCgHI.jpg")
-        profileViewFirstName.text = firstName
-        profileViewLastName.text = lastName
-        profileBirthday.text = birthday
-        profileCity.text = city
+    override fun showProfile(profile: Profile) {
+        avatar.loadImage(profile.avatar)
+        profileCollapsingToolbarLayout.title = "${profile.firstName} ${profile.lastName}"
+        feedAdapter.setProfile(profile)
     }
 
-    override fun showFeed(items: List<BaseMessage>) {
+    override fun showFeed(items: List<PostMessage>) {
         feedAdapter.setItems(items)
     }
 
     private fun initToolbar(){
-        profileViewToolbar.inflateMenu(R.menu.menu_profile_view)
-        profileViewToolbar.setOnMenuItemClickListener {
+        profileToolbar.inflateMenu(R.menu.menu_profile_view)
+        profileToolbar.setOnMenuItemClickListener {
             when(it.itemId){
                 R.id.action_profile_edit -> presenter.profileEdit()
                 R.id.action_logout -> presenter.logout()

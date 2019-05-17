@@ -26,4 +26,5 @@
     <string name="emptySurname">Surname is empty</string>
     <string name="__birthday">Дата</string>
     <string name="posts">Записи</string>
+    <string name="change_status">Изменить статус</string>
 </resources>
