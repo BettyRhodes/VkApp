@@ -6,10 +6,11 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.arellomobile.mvp.presenter.InjectPresenter
 import com.arellomobile.mvp.presenter.ProvidePresenter
 import com.example.vkapi.R
-import com.example.vkapi.presentation.entites.BaseFragment
-import com.example.vkapi.presentation.entites.PostMessage
-import com.example.vkapi.presentation.entites.Profile
+import com.example.vkapi.presentation.common.BaseFragment
+import com.example.vkapi.presentation.models.PostMessage
+import com.example.vkapi.presentation.models.Profile
 import com.example.vkapi.presentation.extensions.loadImage
+import com.example.vkapi.presentation.models.BaseItem
 import com.example.vkapi.presentation.screen.profile.adapter.FeedAdapter
 import kotlinx.android.synthetic.main.fragment_profile_view.*
 import javax.inject.Inject
@@ -43,7 +44,7 @@ class ProfileViewFragment: BaseFragment(R.layout.fragment_profile_view),
         feedAdapter.setProfile(profile)
     }
 
-    override fun showFeed(items: List<PostMessage>) {
+    override fun showFeed(items: List<BaseItem>) {
         feedAdapter.setItems(items)
     }
 

@@ -1,4 +1,4 @@
-package com.example.vkapi.presentation.entites
+package com.example.vkapi.presentation.common
 
 import com.arellomobile.mvp.MvpPresenter
 import com.arellomobile.mvp.MvpView

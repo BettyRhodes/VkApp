@@ -1,4 +1,4 @@
-package com.example.vkapi.presentation.entites
+package com.example.vkapi.presentation.models
 
 class Profile (id: Int,
                val firstName: String,

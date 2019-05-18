@@ -2,7 +2,7 @@ package com.example.vkapi.presentation.screen.profile.adapter
 
 import android.view.View
 import androidx.recyclerview.widget.RecyclerView
-import com.example.vkapi.presentation.entites.PostMessage
+import com.example.vkapi.presentation.models.PostMessage
 import com.example.vkapi.presentation.extensions.loadImage
 import kotlinx.android.synthetic.main.item_post_message.view.*
 

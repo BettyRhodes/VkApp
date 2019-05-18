@@ -3,9 +3,9 @@ package com.example.vkapi.presentation.screen.profile.adapter
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.vkapi.R
-import com.example.vkapi.presentation.entites.BaseItem
-import com.example.vkapi.presentation.entites.PostMessage
-import com.example.vkapi.presentation.entites.Profile
+import com.example.vkapi.presentation.models.BaseItem
+import com.example.vkapi.presentation.models.PostMessage
+import com.example.vkapi.presentation.models.Profile
 import com.example.vkapi.presentation.extensions.inflate
 import kotlin.IllegalArgumentException
 

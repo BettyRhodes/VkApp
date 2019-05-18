@@ -1,4 +1,4 @@
-package com.example.vkapi.presentation.entites
+package com.example.vkapi.presentation.common
 
 import android.os.Bundle
 import android.view.LayoutInflater

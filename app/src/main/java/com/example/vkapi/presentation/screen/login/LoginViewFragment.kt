@@ -5,7 +5,7 @@ import android.view.View
 import com.arellomobile.mvp.presenter.InjectPresenter
 import com.arellomobile.mvp.presenter.ProvidePresenter
 import com.example.vkapi.R
-import com.example.vkapi.presentation.entites.BaseFragment
+import com.example.vkapi.presentation.common.BaseFragment
 import com.example.vkapi.presentation.extensions.afterTextChanged
 import com.google.android.material.snackbar.Snackbar
 import kotlinx.android.synthetic.main.fragment_login.*

@@ -3,7 +3,7 @@ package com.example.vkapi.presentation.screen.login
 import android.text.TextUtils
 import com.arellomobile.mvp.InjectViewState
 import com.example.vkapi.R
-import com.example.vkapi.presentation.entites.BasePresenter
+import com.example.vkapi.presentation.common.BasePresenter
 import com.example.vkapi.presentation.navigation.Screen
 import ru.terrakok.cicerone.Router
 import javax.inject.Inject
