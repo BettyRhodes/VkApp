@@ -1,4 +1,4 @@
-package com.example.vkapi.extensions
+package com.example.vkapi.presentation.extensions
 
 import android.text.Editable
 import android.text.TextWatcher

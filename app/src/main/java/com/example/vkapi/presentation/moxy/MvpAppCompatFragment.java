@@ -1,4 +1,4 @@
-package com.example.vkapi.moxy;
+package com.example.vkapi.presentation.moxy;
 
 import android.os.Bundle;
 import androidx.fragment.app.Fragment;

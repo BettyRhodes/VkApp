@@ -1,4 +1,6 @@
-package com.example.vkapi.entites
+package com.example.vkapi.presentation.entites
+
+import com.example.vkapi.presentation.entites.BaseItem
 
 class PostMessage(
     id: Int,

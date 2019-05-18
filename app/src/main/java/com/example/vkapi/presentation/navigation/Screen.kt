@@ -1,10 +1,10 @@
-package com.example.vkapi.navigation
+package com.example.vkapi.presentation.navigation
 
 import androidx.fragment.app.Fragment
-import com.example.vkapi.fragment.edit.EditProfileFragment
-import com.example.vkapi.fragment.login.LoginViewFragment
-import com.example.vkapi.fragment.profile.ProfileViewFragment
-import com.example.vkapi.fragment.splashScreen.SplashFragment
+import com.example.vkapi.presentation.EditProfileFragment
+import com.example.vkapi.presentation.login.LoginViewFragment
+import com.example.vkapi.presentation.profile.ProfileViewFragment
+import com.example.vkapi.presentation.fragment.splashScreen.SplashFragment
 import ru.terrakok.cicerone.android.support.SupportAppScreen
 
 sealed class Screen(fragment: Fragment): BaseScreen(fragment) {
