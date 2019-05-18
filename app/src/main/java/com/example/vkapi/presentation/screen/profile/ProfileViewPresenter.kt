@@ -3,13 +3,15 @@ package com.example.vkapi.presentation.screen.profile
 import com.arellomobile.mvp.InjectViewState
 import com.arellomobile.mvp.MvpPresenter
 import com.example.vkapi.App
+import com.example.vkapi.presentation.entites.BasePresenter
 import com.example.vkapi.presentation.entites.PostMessage
 import com.example.vkapi.presentation.entites.Profile
 import com.example.vkapi.presentation.navigation.Screen
 import com.example.vkapi.presentation.screen.profile.ProfileView
+import ru.terrakok.cicerone.Router
 
 @InjectViewState
-class ProfileViewPresenter : MvpPresenter<ProfileView>() {
+class ProfileViewPresenter(private val router: Router) : BasePresenter<ProfileView>() {
 
     override fun onFirstViewAttach() {
         super.onFirstViewAttach()
@@ -83,10 +85,10 @@ class ProfileViewPresenter : MvpPresenter<ProfileView>() {
     }
 
     fun profileEdit() {
-        App.INSTANCE.router.navigateTo(Screen.EditScreen())
+        router.navigateTo(Screen.EditScreen())
     }
 
     fun logout() {
-        App.INSTANCE.router.replaceScreen(Screen.LoginScreen())
+        router.replaceScreen(Screen.LoginScreen())
     }
 }

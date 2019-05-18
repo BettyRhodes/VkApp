@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.View
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.arellomobile.mvp.presenter.InjectPresenter
+import com.arellomobile.mvp.presenter.ProvidePresenter
 import com.example.vkapi.R
 import com.example.vkapi.presentation.entites.BaseFragment
 import com.example.vkapi.presentation.entites.PostMessage
@@ -11,6 +12,7 @@ import com.example.vkapi.presentation.entites.Profile
 import com.example.vkapi.presentation.extensions.loadImage
 import com.example.vkapi.presentation.screen.profile.adapter.FeedAdapter
 import kotlinx.android.synthetic.main.fragment_profile_view.*
+import org.koin.android.ext.android.get
 
 class ProfileViewFragment: BaseFragment(R.layout.fragment_profile_view),
     ProfileView {
@@ -19,6 +21,9 @@ class ProfileViewFragment: BaseFragment(R.layout.fragment_profile_view),
 
     @InjectPresenter
     lateinit var presenter: ProfileViewPresenter
+
+    @ProvidePresenter
+    fun providePresenter(): ProfileViewPresenter = get()
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)

@@ -3,11 +3,13 @@ package com.example.vkapi.presentation.screen.login
 import android.os.Bundle
 import android.view.View
 import com.arellomobile.mvp.presenter.InjectPresenter
+import com.arellomobile.mvp.presenter.ProvidePresenter
 import com.example.vkapi.R
 import com.example.vkapi.presentation.entites.BaseFragment
 import com.example.vkapi.presentation.extensions.afterTextChanged
 import com.google.android.material.snackbar.Snackbar
 import kotlinx.android.synthetic.main.fragment_login.*
+import org.koin.android.ext.android.get
 import java.lang.IllegalStateException
 
 class LoginViewFragment: BaseFragment(R.layout.fragment_login),
@@ -15,6 +17,9 @@ class LoginViewFragment: BaseFragment(R.layout.fragment_login),
 
     @InjectPresenter
     lateinit var presenter: LoginViewPresenter
+
+    @ProvidePresenter
+    fun providePresenter(): LoginViewPresenter = get()
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
 

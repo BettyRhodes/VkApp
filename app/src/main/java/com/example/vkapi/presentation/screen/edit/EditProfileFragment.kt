@@ -5,10 +5,12 @@ import android.os.Bundle
 import android.view.View
 import android.widget.EditText
 import com.arellomobile.mvp.presenter.InjectPresenter
+import com.arellomobile.mvp.presenter.ProvidePresenter
 import com.example.vkapi.R
 import com.example.vkapi.presentation.entites.BaseFragment
 import com.google.android.material.snackbar.Snackbar
 import kotlinx.android.synthetic.main.fragment_edit_profile.*
+import org.koin.android.ext.android.get
 import java.util.*
 import kotlin.IllegalStateException
 
@@ -17,6 +19,9 @@ class EditProfileFragment: BaseFragment(R.layout.fragment_edit_profile),
 
     @InjectPresenter
     lateinit var presenter: EditProfilePresenter
+
+    @ProvidePresenter
+    fun providePresenter(): EditProfilePresenter = get()
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
 
