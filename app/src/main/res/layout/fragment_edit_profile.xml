@@ -3,7 +3,8 @@
         xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
         android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="@color/gray">
 
     <androidx.appcompat.widget.Toolbar
             android:id="@+id/editViewToolbar"
@@ -15,65 +16,53 @@
             app:title="@string/edit"
             app:titleTextColor="@color/white"/>
 
-    <TextView
-            android:layout_marginTop="@dimen/text_margin_top"
-            android:layout_marginStart="@dimen/text_margin_start"
-            android:text="@string/firstName"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
-
     <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/textInputName"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            style="@style/ThemeOverlay.TextInputEditText.EditPage"
+            android:hint="@string/firstName">
 
         <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/editName"
                 android:inputType="text"
                 android:layout_marginStart="@dimen/text_margin_start"
                 android:layout_marginEnd="@dimen/text_margin_start"
+                android:textColor="@color/white"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
 
     </com.google.android.material.textfield.TextInputLayout>
 
-    <TextView
-            android:layout_marginTop="@dimen/text_margin_top"
-            android:layout_marginStart="@dimen/text_margin_start"
-            android:text="@string/lastName"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
-
     <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/textInputSurname"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            style="@style/ThemeOverlay.TextInputEditText.EditPage"
+            android:hint="@string/lastName">
 
     <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/editSurname"
             android:layout_marginStart="@dimen/text_margin_start"
             android:layout_marginEnd="@dimen/text_margin_start"
+            android:textColor="@color/white"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
 
     </com.google.android.material.textfield.TextInputLayout>
 
-    <TextView
-            android:layout_marginTop="@dimen/text_margin_top"
-            android:layout_marginStart="@dimen/text_margin_start"
-            android:text="@string/_birthday"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
-
     <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/textInputBirthday"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            style="@style/ThemeOverlay.TextInputEditText.EditPage"
+            android:layout_height="wrap_content"
+            android:hint="@string/birthday">
 
     <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/editDate"
             android:layout_marginStart="@dimen/text_margin_start"
             android:layout_marginEnd="@dimen/text_margin_start"
+            android:textColor="@color/white"
             android:inputType="text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

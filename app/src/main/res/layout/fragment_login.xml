@@ -4,7 +4,7 @@
             xmlns:tools="http://schemas.android.com/tools"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@color/colorPrimary">
+            android:background="@color/gray">
 
 <androidx.constraintlayout.widget.ConstraintLayout
         android:orientation="vertical"
@@ -17,7 +17,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/email"
-            style="@style/ThemeOverlay.TextInputEditText.OutlinedBox"
+            style="@style/ThemeOverlay.TextInputEditText.LoginPage"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent" android:layout_marginTop="184dp"
             app:layout_constraintTop_toTopOf="parent" app:layout_constraintHorizontal_bias="1.0">
@@ -35,7 +35,7 @@
             android:id="@+id/textInputPassword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            style="@style/ThemeOverlay.TextInputEditText.OutlinedBox"
+            style="@style/ThemeOverlay.TextInputEditText.LoginPage"
             android:hint="@string/password"
             app:passwordToggleEnabled="true"
             tools:layout_editor_absoluteX="16dp"

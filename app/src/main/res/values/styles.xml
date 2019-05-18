@@ -1,4 +1,4 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
 
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
@@ -13,15 +13,33 @@
     </style>
 
     <style name="AppTheme.LoginButton" parent="Widget.MaterialComponents.Button.OutlinedButton">
-        <item name="strokeColor">@color/darkGrey</item>
+        <item name="strokeColor">@color/darkGray</item>
         <item name="strokeWidth">1dp</item>
         <item name="android:textColor">@android:color/white</item>
     </style>
 
-    <style name="ThemeOverlay.TextInputEditText.OutlinedBox" parent="ThemeOverlay.MaterialComponents.TextInputEditText.OutlinedBox">
+    <style name="ThemeOverlay.TextInputEditText.LoginPage" parent="ThemeOverlay.MaterialComponents.TextInputEditText.OutlinedBox">
         <item name="android:textColorHint">@color/white</item>
         <item name="android:textColor">@color/white</item>
         <item name="passwordToggleTint">@android:color/white</item>
+    </style>
+
+    <style name="ThemeOverlay.TextInputEditText.EditPage" parent="ThemeOverlay.MaterialComponents.TextInputEditText.OutlinedBox">
+        <item name="android:textColorHint">@color/white</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="passwordToggleTint">@android:color/white</item>
+    </style>
+
+    <style name="AppTheme.TextFloatLabelAppearance" parent="TextAppearance.Design.Hint">
+        <!-- Floating label appearance here -->
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">20sp</item>
+    </style>
+
+    <style name="AppTheme.TextErrorAppearance" parent="TextAppearance.Design.Error">
+        <!-- Error message appearance here -->
+        <item name="android:textColor">#ff0000</item>
+        <item name="android:textSize">20sp</item>
     </style>
 
     <style name="Profile" parent="TextAppearance.Widget.AppCompat.Toolbar.Title">
@@ -31,7 +49,6 @@
     <style name="ProfileExpanded" parent="TextAppearance.Widget.AppCompat.Toolbar.Title">
         <item name="android:textColor">@color/white</item>
         <item name="android:textSize">24sp</item>
-
     </style>
 
     <style name="AppTheme.Post" parent="CardView.Light">
