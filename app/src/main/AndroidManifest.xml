@@ -13,13 +13,16 @@
             android:theme="@style/AppTheme"
             android:name=".App"
             tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".presentation.screen.main.MainActivity">
+
+        <activity android:name=".presentation.screen.main.MainActivity"
+                  android:windowSoftInputMode="adjustResize|stateAlwaysHidden">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
-
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
+
+
     </application>
 
 </manifest>

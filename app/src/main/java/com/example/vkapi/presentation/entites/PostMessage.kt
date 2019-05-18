@@ -1,7 +1,5 @@
 package com.example.vkapi.presentation.entites
 
-import com.example.vkapi.presentation.entites.BaseItem
-
 class PostMessage(
     id: Int,
     val profileName: String,

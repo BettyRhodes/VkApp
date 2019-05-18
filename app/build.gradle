@@ -51,7 +51,9 @@ dependencies {
     //Cicerone
     implementation 'ru.terrakok.cicerone:cicerone:5.0.0'
 
-    //Koin
-    implementation "org.koin:koin-core:2.0.0-GA2"
-    implementation "org.koin:koin-android:2.0.0-GA2"
+    //Dagger2
+    implementation 'com.google.dagger:dagger:2.22.1'
+    kapt 'com.google.dagger:dagger-compiler:2.22.1'
+    implementation 'com.google.dagger:dagger-android-support:2.22.1'
+    kapt 'com.google.dagger:dagger-android-processor:2.22.1'
 }

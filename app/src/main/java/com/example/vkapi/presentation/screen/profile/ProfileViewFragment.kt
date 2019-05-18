@@ -12,18 +12,19 @@ import com.example.vkapi.presentation.entites.Profile
 import com.example.vkapi.presentation.extensions.loadImage
 import com.example.vkapi.presentation.screen.profile.adapter.FeedAdapter
 import kotlinx.android.synthetic.main.fragment_profile_view.*
-import org.koin.android.ext.android.get
+import javax.inject.Inject
 
 class ProfileViewFragment: BaseFragment(R.layout.fragment_profile_view),
     ProfileView {
 
     private val feedAdapter = FeedAdapter()
 
+    @Inject
     @InjectPresenter
     lateinit var presenter: ProfileViewPresenter
 
     @ProvidePresenter
-    fun providePresenter(): ProfileViewPresenter = get()
+    fun providePresenter(): ProfileViewPresenter = presenter
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)

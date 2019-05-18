@@ -2,15 +2,14 @@ package com.example.vkapi.presentation.screen.edit
 
 import android.text.TextUtils
 import com.arellomobile.mvp.InjectViewState
-import com.arellomobile.mvp.MvpPresenter
-import com.example.vkapi.App
 import com.example.vkapi.R
 import com.example.vkapi.presentation.entites.BasePresenter
 import com.example.vkapi.presentation.navigation.Screen
 import ru.terrakok.cicerone.Router
+import javax.inject.Inject
 
 @InjectViewState
-class EditProfilePresenter(private val router: Router): BasePresenter<EditProfileView>() {
+class EditProfilePresenter @Inject constructor(private val router: Router): BasePresenter<EditProfileView>() {
 
     fun editProfile(firstName: String, lastName: String){
         when{

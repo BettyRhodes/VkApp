@@ -1,17 +1,15 @@
 package com.example.vkapi.presentation.screen.profile
 
 import com.arellomobile.mvp.InjectViewState
-import com.arellomobile.mvp.MvpPresenter
-import com.example.vkapi.App
 import com.example.vkapi.presentation.entites.BasePresenter
 import com.example.vkapi.presentation.entites.PostMessage
 import com.example.vkapi.presentation.entites.Profile
 import com.example.vkapi.presentation.navigation.Screen
-import com.example.vkapi.presentation.screen.profile.ProfileView
 import ru.terrakok.cicerone.Router
+import javax.inject.Inject
 
 @InjectViewState
-class ProfileViewPresenter(private val router: Router) : BasePresenter<ProfileView>() {
+class ProfileViewPresenter @Inject constructor(private val router: Router) : BasePresenter<ProfileView>() {
 
     override fun onFirstViewAttach() {
         super.onFirstViewAttach()

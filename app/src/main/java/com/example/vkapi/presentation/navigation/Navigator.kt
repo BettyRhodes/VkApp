@@ -8,4 +8,4 @@ class Navigator(
     activity: FragmentActivity,
     fragmentManager: FragmentManager,
     containerId: Int
-): SupportAppNavigator(activity, fragmentManager, containerId)
+): SupportAppNavigator(activity, fragmentManager, containerId){}

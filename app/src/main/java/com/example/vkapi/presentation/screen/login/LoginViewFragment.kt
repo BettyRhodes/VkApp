@@ -9,17 +9,18 @@ import com.example.vkapi.presentation.entites.BaseFragment
 import com.example.vkapi.presentation.extensions.afterTextChanged
 import com.google.android.material.snackbar.Snackbar
 import kotlinx.android.synthetic.main.fragment_login.*
-import org.koin.android.ext.android.get
 import java.lang.IllegalStateException
+import javax.inject.Inject
 
 class LoginViewFragment: BaseFragment(R.layout.fragment_login),
     LoginView {
 
+    @Inject
     @InjectPresenter
     lateinit var presenter: LoginViewPresenter
 
     @ProvidePresenter
-    fun providePresenter(): LoginViewPresenter = get()
+    fun providePresenter(): LoginViewPresenter = presenter
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
 

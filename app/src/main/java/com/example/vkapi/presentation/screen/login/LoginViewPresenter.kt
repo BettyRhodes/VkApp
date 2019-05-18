@@ -6,21 +6,22 @@ import com.example.vkapi.R
 import com.example.vkapi.presentation.entites.BasePresenter
 import com.example.vkapi.presentation.navigation.Screen
 import ru.terrakok.cicerone.Router
+import javax.inject.Inject
 
 
 @InjectViewState
-class LoginViewPresenter(private val router: Router): BasePresenter<LoginView>() {
+class LoginViewPresenter @Inject constructor(private val router: Router): BasePresenter<LoginView>() {
 
     fun login(email: String, password: String){
         when {
             TextUtils.isEmpty(email) -> viewState.showEmailError(message = R.string.emptyField)
             TextUtils.isEmpty(password) -> viewState.showPasswordError(message = R.string.emptyField)
-            !isValidPassword(password) -> viewState.showPasswordError(message = R.string.invalidPassword)
+            !validPassword(password) -> viewState.showPasswordError(message = R.string.invalidPassword)
             password == "123456" ->  router.replaceScreen(Screen.ProfileViewScreen())
             else -> viewState.showLoginError(message = R.string.loginError)
         }
     }
 
-    private fun isValidPassword(password: String): Boolean = password.length >= 6
+    private fun validPassword(password: String): Boolean = password.length >= 3
 
 }
