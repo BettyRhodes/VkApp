@@ -1,8 +1,8 @@
-package com.example.vkapi.fragment.profile.adapter
+package com.example.vkapi.presentation.screen.profile.adapter
 
 import android.view.View
 import androidx.recyclerview.widget.RecyclerView
-import com.example.vkapi.entites.Profile
+import com.example.vkapi.presentation.entites.Profile
 import kotlinx.android.synthetic.main.item_profile.view.*
 
 class ProfileHolder(view: View): RecyclerView.ViewHolder(view){

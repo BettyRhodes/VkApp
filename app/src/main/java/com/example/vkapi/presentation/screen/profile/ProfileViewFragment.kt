@@ -1,19 +1,19 @@
-package com.example.vkapi.fragment.profile
+package com.example.vkapi.presentation.screen.profile
 
 import android.os.Bundle
 import android.view.View
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.arellomobile.mvp.presenter.InjectPresenter
 import com.example.vkapi.R
-import com.example.vkapi.entites.BaseItem
-import com.example.vkapi.entites.PostMessage
-import com.example.vkapi.entites.Profile
-import com.example.vkapi.extensions.loadImage
-import com.example.vkapi.fragment.BaseFragment
-import com.example.vkapi.fragment.profile.adapter.FeedAdapter
+import com.example.vkapi.presentation.entites.BaseFragment
+import com.example.vkapi.presentation.entites.PostMessage
+import com.example.vkapi.presentation.entites.Profile
+import com.example.vkapi.presentation.extensions.loadImage
+import com.example.vkapi.presentation.screen.profile.adapter.FeedAdapter
 import kotlinx.android.synthetic.main.fragment_profile_view.*
 
-class ProfileViewFragment: BaseFragment(R.layout.fragment_profile_view), ProfileView {
+class ProfileViewFragment: BaseFragment(R.layout.fragment_profile_view),
+    ProfileView {
 
     private val feedAdapter = FeedAdapter()
 

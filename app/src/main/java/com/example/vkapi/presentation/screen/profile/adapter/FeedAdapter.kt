@@ -1,12 +1,12 @@
-package com.example.vkapi.fragment.profile.adapter
+package com.example.vkapi.presentation.screen.profile.adapter
 
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.vkapi.R
-import com.example.vkapi.entites.BaseItem
-import com.example.vkapi.entites.Profile
-import com.example.vkapi.extensions.inflate
-import com.example.vkapi.entites.PostMessage
+import com.example.vkapi.presentation.entites.BaseItem
+import com.example.vkapi.presentation.entites.PostMessage
+import com.example.vkapi.presentation.entites.Profile
+import com.example.vkapi.presentation.extensions.inflate
 import kotlin.IllegalArgumentException
 
 class FeedAdapter: RecyclerView.Adapter<RecyclerView.ViewHolder>() {
@@ -19,9 +19,13 @@ class FeedAdapter: RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder =
         when(viewType){
-            PROFILE -> ProfileHolder(parent.inflate(R.layout.item_profile, false))
+            PROFILE -> ProfileHolder(
+                parent.inflate(R.layout.item_profile, false)
+            )
 
-            POST_MESSAGE -> PostMessageHolder(parent.inflate(R.layout.item_post_message, false))
+            POST_MESSAGE -> PostMessageHolder(
+                parent.inflate(R.layout.item_post_message, false)
+            )
 
             else -> throw IllegalArgumentException("viewType: $viewType is not found")
         }

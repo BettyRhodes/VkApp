@@ -1,4 +1,4 @@
-package com.example.vkapi.fragment.edit
+package com.example.vkapi.presentation.screen.edit
 
 import android.app.DatePickerDialog
 import android.os.Bundle
@@ -6,13 +6,14 @@ import android.view.View
 import android.widget.EditText
 import com.arellomobile.mvp.presenter.InjectPresenter
 import com.example.vkapi.R
-import com.example.vkapi.fragment.BaseFragment
+import com.example.vkapi.presentation.entites.BaseFragment
 import com.google.android.material.snackbar.Snackbar
 import kotlinx.android.synthetic.main.fragment_edit_profile.*
 import java.util.*
 import kotlin.IllegalStateException
 
-class EditProfileFragment: BaseFragment(R.layout.fragment_edit_profile), EditProfileView {
+class EditProfileFragment: BaseFragment(R.layout.fragment_edit_profile),
+    EditProfileView {
 
     @InjectPresenter
     lateinit var presenter: EditProfilePresenter

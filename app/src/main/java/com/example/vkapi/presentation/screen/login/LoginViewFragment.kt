@@ -1,16 +1,17 @@
-package com.example.vkapi.fragment.login
+package com.example.vkapi.presentation.screen.login
 
 import android.os.Bundle
 import android.view.View
 import com.arellomobile.mvp.presenter.InjectPresenter
 import com.example.vkapi.R
-import com.example.vkapi.extensions.afterTextChanged
-import com.example.vkapi.fragment.BaseFragment
+import com.example.vkapi.presentation.entites.BaseFragment
+import com.example.vkapi.presentation.extensions.afterTextChanged
 import com.google.android.material.snackbar.Snackbar
 import kotlinx.android.synthetic.main.fragment_login.*
 import java.lang.IllegalStateException
 
-class LoginViewFragment: BaseFragment(R.layout.fragment_login), LoginView{
+class LoginViewFragment: BaseFragment(R.layout.fragment_login),
+    LoginView {
 
     @InjectPresenter
     lateinit var presenter: LoginViewPresenter

@@ -1,4 +1,4 @@
-package com.example.vkapi.fragment.edit
+package com.example.vkapi.presentation.screen.edit
 
 import com.arellomobile.mvp.MvpView
 

@@ -1,4 +1,4 @@
-package com.example.vkapi.fragment.login
+package com.example.vkapi.presentation.screen.login
 
 import com.arellomobile.mvp.MvpView
 
