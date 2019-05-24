@@ -5,7 +5,6 @@ import com.example.vkapi.domain.repository.PostRepository
 import com.example.vkapi.domain.repository.ProfileRepository
 import com.example.vkapi.presentation.common.BasePresenter
 import com.example.vkapi.presentation.models.PostMessage
-import com.example.vkapi.presentation.models.Profile
 import com.example.vkapi.presentation.navigation.Screen
 import ru.terrakok.cicerone.Router
 import javax.inject.Inject
@@ -20,7 +19,7 @@ class ProfileViewPresenter @Inject constructor(
     override fun onFirstViewAttach() {
         super.onFirstViewAttach()
 
-        viewState.showProfile(profileRepository.getUser(1))
+        viewState.showProfile(profileRepository.getProfile())
 
         viewState.showFeed(postRepository.getAll())
     }

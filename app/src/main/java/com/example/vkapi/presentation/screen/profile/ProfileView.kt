@@ -7,5 +7,5 @@ import com.example.vkapi.presentation.models.Profile
 
 interface ProfileView: MvpView {
     fun showProfile(profile: Profile)
-    fun showFeed(items: List<BaseItem>)
+    fun showFeed(items: List<PostMessage>)
 }

@@ -4,5 +4,5 @@ import com.example.vkapi.presentation.models.Profile
 
 interface ProfileRepository {
 
-    fun getUser(id: Int): Profile
+    fun getProfile(): Profile
 }

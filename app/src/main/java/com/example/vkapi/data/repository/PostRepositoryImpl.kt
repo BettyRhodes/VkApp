@@ -5,10 +5,14 @@ import com.example.vkapi.presentation.models.BaseItem
 import com.example.vkapi.presentation.models.PostMessage
 import javax.inject.Inject
 
-class PostRepositoryImpl @Inject constructor(): PostRepository{
+class PostRepositoryImpl @Inject constructor(): PostRepository {
 
-    override fun getAll(): List<BaseItem> {
-       return listOf(
+    override fun getPost(id: Int): PostMessage {
+        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+    }
+
+    override fun getAll(): List<PostMessage> {
+        return listOf(
             PostMessage(
                 1,
                 "Юрий Пожидаев",
@@ -60,9 +64,5 @@ class PostRepositoryImpl @Inject constructor(): PostRepository{
                 21
             )
         )
-    }
-
-    override fun getPost(id: Int): BaseItem {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }
 }

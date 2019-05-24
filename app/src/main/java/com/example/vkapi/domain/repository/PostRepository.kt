@@ -1,9 +1,10 @@
 package com.example.vkapi.domain.repository
 
-import com.example.vkapi.presentation.models.BaseItem
+import com.example.vkapi.presentation.models.PostMessage
 
 interface PostRepository {
 
-    fun getAll(): List<BaseItem>
-    fun getPost(id: Int): BaseItem
+    //fun getAll(): Single<List<PostMessage>>
+    fun getAll(): List<PostMessage>
+    fun getPost(id: Int): PostMessage
 }

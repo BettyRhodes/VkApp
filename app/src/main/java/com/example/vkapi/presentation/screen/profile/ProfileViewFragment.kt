@@ -44,7 +44,7 @@ class ProfileViewFragment: BaseFragment(R.layout.fragment_profile_view),
         feedAdapter.setProfile(profile)
     }
 
-    override fun showFeed(items: List<BaseItem>) {
+    override fun showFeed(items: List<PostMessage>) {
         feedAdapter.setItems(items)
     }
 
