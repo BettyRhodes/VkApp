@@ -1,5 +1,6 @@
-package com.example.vkapi.dagger
+package com.example.vkapi.dagger.module.presentation
 
+import com.example.vkapi.dagger.FragmentScope
 import com.example.vkapi.presentation.screen.edit.EditProfileFragment
 import com.example.vkapi.presentation.screen.login.LoginViewFragment
 import com.example.vkapi.presentation.screen.profile.ProfileViewFragment

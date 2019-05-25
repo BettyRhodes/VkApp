@@ -1,5 +1,6 @@
-package com.example.vkapi.dagger
+package com.example.vkapi.dagger.module.presentation
 
+import com.example.vkapi.dagger.ActivityScope
 import com.example.vkapi.presentation.screen.main.MainActivity
 import dagger.Module
 import dagger.android.ContributesAndroidInjector

@@ -1,4 +1,4 @@
-package com.example.vkapi.dagger
+package com.example.vkapi.dagger.module.presentation
 
 import dagger.Module
 import dagger.Provides

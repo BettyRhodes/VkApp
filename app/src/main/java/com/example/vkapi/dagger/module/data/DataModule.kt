@@ -1,4 +1,4 @@
-package com.example.vkapi.dagger
+package com.example.vkapi.dagger.module.data
 
 import com.example.vkapi.data.repository.PostRepositoryImpl
 import com.example.vkapi.data.repository.ProfileRepositoryImpl
