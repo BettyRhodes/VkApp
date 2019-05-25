@@ -1,5 +1,6 @@
 package com.example.vkapi.data.network
 
+import com.example.vkapi.data.response.PostResponse
 import com.example.vkapi.data.response.ProfileResponse
 import io.reactivex.Observable
 import io.reactivex.Single
@@ -16,5 +17,5 @@ interface Api {
     fun getProfile(@Path("userId") userId: Int): Single<ProfileResponse>
 
     @GET("{userId}/posts")
-    fun getPosts(@Path("userId") userId: Int): Single<ProfileResponse>
+    fun getPosts(@Path("userId") userId: Int): Single<PostResponse>
 }

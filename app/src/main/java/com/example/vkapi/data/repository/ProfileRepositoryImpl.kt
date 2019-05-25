@@ -1,7 +1,7 @@
 package com.example.vkapi.data.repository
 
-import com.example.vkapi.domain.entity.Profile
 import com.example.vkapi.domain.repository.ProfileRepository
+import com.example.vkapi.presentation.models.Profile
 import javax.inject.Inject
 
 class ProfileRepositoryImpl @Inject constructor(): ProfileRepository {

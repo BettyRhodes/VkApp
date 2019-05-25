@@ -24,18 +24,17 @@ class LoginViewPresenter @Inject constructor(
             TextUtils.isEmpty(email) -> viewState.showEmailError(message = R.string.emptyField)
             TextUtils.isEmpty(password) -> viewState.showPasswordError(message = R.string.emptyField)
             !validPassword(password) -> viewState.showPasswordError(message = R.string.invalidPassword)
+            else -> sessionRepository.login(email, password)
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(
+                    {
+                        router.replaceScreen(Screen.ProfileViewScreen())
+                    },
+                    {
+                        viewState.showLoginError(message = R.string.loginError)
+                    }
+                ).untilDestroy()
         }
-
-        sessionRepository.login(email, password)
-            .observeOn(AndroidSchedulers.mainThread())
-            .subscribe(
-                {
-                    router.replaceScreen(Screen.ProfileViewScreen())
-                },
-                {
-                    viewState.showLoginError(message = R.string.loginError)
-                }
-            ).untilDestroy()
     }
 
     // fun login(email: String, password: String){
