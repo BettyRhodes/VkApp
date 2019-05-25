@@ -13,7 +13,7 @@ fun ImageView.loadImage(url: String){
     Glide.with(this).load(url).into(this)
 }
 
-fun ViewGroup.inflate(layoutId: Int, attachToRoot: Boolean): View =
+fun ViewGroup.inflate(layoutId: Int, attachToRoot: Boolean = false): View =
     LayoutInflater.from(context)
         .inflate(layoutId, this, attachToRoot)
 

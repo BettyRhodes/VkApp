@@ -21,7 +21,7 @@
     <style name="ThemeOverlay.TextInputEditText.LoginPage" parent="ThemeOverlay.MaterialComponents.TextInputEditText.OutlinedBox">
         <item name="android:textColorHint">@color/black</item>
         <item name="android:textColor">@color/black</item>
-        <item name="passwordToggleTint">@android:color/white</item>
+        <item name="passwordToggleTint">@android:color/black</item>
     </style>
 
     <style name="ThemeOverlay.TextInputEditText.EditPage" parent="ThemeOverlay.MaterialComponents.TextInputEditText.OutlinedBox">

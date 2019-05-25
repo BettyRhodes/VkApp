@@ -1,6 +1,6 @@
 package com.example.vkapi.domain.entity
 
-data class PostMessage(
+data class Post(
     val id: Int,
     val profileName: String,
     val message: String,

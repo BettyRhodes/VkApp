@@ -20,11 +20,11 @@ class FeedAdapter: RecyclerView.Adapter<RecyclerView.ViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder =
         when(viewType){
             PROFILE -> ProfileHolder(
-                parent.inflate(R.layout.item_profile, false)
+                parent.inflate(R.layout.item_profile)
             )
 
             POST_MESSAGE -> PostMessageHolder(
-                parent.inflate(R.layout.item_post_message, false)
+                parent.inflate(R.layout.item_post_message)
             )
 
             else -> throw IllegalArgumentException("viewType: $viewType is not found")

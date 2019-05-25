@@ -1,10 +1,10 @@
 package com.example.vkapi.domain.repository
 
-import com.example.vkapi.presentation.models.PostMessage
+import com.example.vkapi.domain.entity.Post
+import io.reactivex.Single
 
 interface PostRepository {
 
-    //fun getAll(): Single<List<PostMessage>>
-    fun getAll(): List<PostMessage>
-    fun getPost(id: Int): PostMessage
+    fun getPosts(): Single<List<Post>>
+    fun getPost(id: Int): Post
 }

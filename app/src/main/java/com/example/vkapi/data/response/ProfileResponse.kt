@@ -2,7 +2,7 @@ package com.example.vkapi.data.response
 
 import com.google.gson.annotations.SerializedName
 
-data class ProfileResponse(
+class ProfileResponse(
     @SerializedName("id") val id: Int,
     @SerializedName("firstName") val firstName: String,
     @SerializedName("lastName") val lastName: String,

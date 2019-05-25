@@ -20,32 +20,36 @@ class LoginViewPresenter @Inject constructor(
 
     fun login(email: String, password: String) {
 
-        when {
-            TextUtils.isEmpty(email) -> viewState.showEmailError(message = R.string.emptyField)
-            TextUtils.isEmpty(password) -> viewState.showPasswordError(message = R.string.emptyField)
-            !validPassword(password) -> viewState.showPasswordError(message = R.string.invalidPassword)
-            else -> sessionRepository.login(email, password)
+        if(TextUtils.isEmpty(email)) {
+            viewState.showEmailError(message = R.string.emptyField)
+            return
+        }
+
+        if(TextUtils.isEmpty(password)){
+            viewState.showPasswordError(message = R.string.emptyField)
+            return
+        }
+
+        if(!validPassword(password)){
+            viewState.showPasswordError(message = R.string.invalidPassword)
+            return
+        }
+
+        //C появлением api перенести роутер
+        sessionRepository.login(email, password)
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(
                     {
-                        router.replaceScreen(Screen.ProfileViewScreen())
+
                     },
                     {
-                        viewState.showLoginError(message = R.string.loginError)
+                        router.newRootScreen(Screen.ProfileViewScreen())
+                     //   viewState.showLoginError(message = R.string.loginError)
+                        Log.d("TAG", it.message.toString())
                     }
                 ).untilDestroy()
-        }
-    }
 
-    // fun login(email: String, password: String){
-    //     when {
-    //         TextUtils.isEmpty(email) -> viewState.showEmailError(message = R.string.emptyField)
-    //         TextUtils.isEmpty(password) -> viewState.showPasswordError(message = R.string.emptyField)
-    //         !validPassword(password) -> viewState.showPasswordError(message = R.string.invalidPassword)
-    //         password == "1234" ->  router.replaceScreen(Screen.ProfileViewScreen())
-    //         else -> viewState.showLoginError(message = R.string.loginError)
-    //     }
-    // }
+    }
 
     private fun validPassword(password: String): Boolean = password.length >= 3
 
