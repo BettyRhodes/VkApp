@@ -9,6 +9,7 @@ import com.example.vkapi.presentation.common.BasePresenter
 import com.example.vkapi.presentation.navigation.Screen
 import io.reactivex.android.schedulers.AndroidSchedulers
 import ru.terrakok.cicerone.Router
+import timber.log.Timber
 import javax.inject.Inject
 
 
@@ -45,7 +46,7 @@ class LoginViewPresenter @Inject constructor(
                     {
                         router.newRootScreen(Screen.ProfileViewScreen())
                      //   viewState.showLoginError(message = R.string.loginError)
-                        Log.d("TAG", it.message.toString())
+                        Timber.tag("okHttp").d(it.message.toString())
                     }
                 ).untilDestroy()
 
