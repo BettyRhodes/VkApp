@@ -11,6 +11,11 @@ class PostMessageHolder(view: View): RecyclerView.ViewHolder(view){
         itemView.itemPostMessage.text = data.message
         itemView.postDate.text = data.date
         itemView.likes.text = data.likes.toString()
+        itemView.profileImage.loadImage(data.avatar)
+        itemView.itemPostImage.visibility = View.GONE
+        itemView.itemPostMessage.visibility = View.GONE
+        itemView.itemPostMusic.visibility = View.GONE
+        itemView.itemVideo.visibility = View.GONE
 
         if (data.image.isNotEmpty()) {
             itemView.itemPostImage.loadImage(data.image)

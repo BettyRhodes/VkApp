@@ -15,6 +15,7 @@ class PostMessageConverter @Inject constructor(): PresentationConverter<Post, Po
             t.musicName,
             t.musicAuthor,
             t.date,
-            t.likes
+            t.likes,
+            t.avatar
         )
 }

@@ -54,7 +54,8 @@ class ApiMock @Inject constructor(): Api{
                         "",
                         "",
                         "14 мая 2019",
-                        10
+                        10,
+                        "https://pbs.twimg.com/profile_images/1129032835006812160/FyzA9DWR_400x400.jpg"
                     ), Post(
                         4,
                         "Юрий Пожидаев",
@@ -64,7 +65,8 @@ class ApiMock @Inject constructor(): Api{
                         "Murder On My Mind",
                         "YNW Melly",
                         "13 мая 2019",
-                        17
+                        17,
+                        "https://pbs.twimg.com/profile_images/1129032835006812160/FyzA9DWR_400x400.jpg"
                     )
                     , Post(
                         2,
@@ -75,7 +77,8 @@ class ApiMock @Inject constructor(): Api{
                         "",
                         "",
                         "12 мая 2019",
-                        23
+                        23,
+                        "https://pbs.twimg.com/profile_images/1129032835006812160/FyzA9DWR_400x400.jpg"
                     ), Post(
                         4, "Юрий Пожидаев",
                         "Пост с видео",
@@ -84,7 +87,8 @@ class ApiMock @Inject constructor(): Api{
                         "",
                         "",
                         "11 мая 2019",
-                        32
+                        32,
+                        "https://pbs.twimg.com/profile_images/1129032835006812160/FyzA9DWR_400x400.jpg"
                     ), Post(
                         5, "Юрий Пожидаев",
                         "Полный пост",
@@ -93,7 +97,8 @@ class ApiMock @Inject constructor(): Api{
                         "Murder On My Mind",
                         "YNW Melly",
                         "5 мая 2019",
-                        21
+                        21,
+                        "https://pbs.twimg.com/profile_images/1129032835006812160/FyzA9DWR_400x400.jpg"
                     )
                 )
             }.flatten()

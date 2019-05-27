@@ -27,20 +27,6 @@ class ProfileViewPresenter @Inject constructor(
 
         getProfile()
         getWall()
-
-        //viewState.showFeed(postRepository.getPosts())
-
-      //  postRepository.getPosts()
-      //      .observeOn(AndroidSchedulers.mainThread())
-      //      .subscribe(
-      //          {
-      //
-      //          },
-      //          {
-//
-      //          })
-      //  viewState.showFeed(postRepository.getPosts())
-
     }
 
     private fun getWall(){

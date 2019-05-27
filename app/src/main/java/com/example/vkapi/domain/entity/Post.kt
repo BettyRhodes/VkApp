@@ -9,5 +9,6 @@ data class Post(
     val musicName: String,
     val musicAuthor: String,
     val date: String,
-    val likes: Int
+    val likes: Int,
+    val avatar: String
 )

@@ -17,7 +17,8 @@ class PostConverter @Inject constructor() :
             it.musicName,
             it.musicAuthor,
             it.date,
-            it.likes
+            it.likes,
+            it.avatar
         )
     }
 }
