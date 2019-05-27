@@ -1,6 +1,7 @@
 package com.example.vkapi.data.repository
 
 import com.example.vkapi.data.converter.PostConverter
+import com.example.vkapi.data.datasource.PostsDataSource
 import com.example.vkapi.data.network.Api
 import com.example.vkapi.domain.entity.Post
 import com.example.vkapi.domain.repository.PostRepository
@@ -9,7 +10,7 @@ import io.reactivex.schedulers.Schedulers
 import javax.inject.Inject
 
 class PostRepositoryImpl @Inject constructor(
-    private val api: Api,
+    private val postsDataSource: PostsDataSource,
     private val postConverter: PostConverter
 ): PostRepository {
 
@@ -17,7 +18,7 @@ class PostRepositoryImpl @Inject constructor(
         TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }
 
-    override fun getPosts(): Single<List<Post>> = api.getPosts()
+    override fun getPosts(): Single<List<Post>> = postsDataSource.getPosts(1)
         .subscribeOn(Schedulers.io())
         .map(postConverter::convertTo)
 }

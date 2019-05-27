@@ -1,20 +1,21 @@
 package com.example.vkapi.data.repository
 
+import com.example.vkapi.data.converter.Converter
+import com.example.vkapi.data.datasource.ProfileDataSource
+import com.example.vkapi.data.response.ProfileResponse
+import com.example.vkapi.domain.entity.User
 import com.example.vkapi.domain.repository.ProfileRepository
-import com.example.vkapi.presentation.models.Profile
+import io.reactivex.Single
+import io.reactivex.schedulers.Schedulers
 import javax.inject.Inject
 
-class ProfileRepositoryImpl @Inject constructor(): ProfileRepository {
+class ProfileRepositoryImpl @Inject constructor(
+    private val profileDataSource: ProfileDataSource,
+    private val userConverter: Converter<ProfileResponse, User>
+): ProfileRepository {
 
-    override fun getProfile(): Profile {
-       return Profile(
-            1,
-            "Юрий",
-            "Пожидаев",
-            "https://pbs.twimg.com/profile_images/1129032835006812160/FyzA9DWR_400x400.jpg",
-            "Атланта",
-            "30 июня 1998",
-            ""
-        )
-    }
+    override fun getProfile(): Single<User> =
+            profileDataSource.getProfile()
+                .subscribeOn(Schedulers.io())
+                .map(userConverter::convertTo)
 }

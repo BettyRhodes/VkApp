@@ -1,8 +1,9 @@
 package com.example.vkapi.domain.repository
 
-import com.example.vkapi.presentation.models.Profile
+import com.example.vkapi.domain.entity.User
+import io.reactivex.Single
 
 interface ProfileRepository {
 
-    fun getProfile(): Profile
+    fun getProfile(): Single<User>
 }

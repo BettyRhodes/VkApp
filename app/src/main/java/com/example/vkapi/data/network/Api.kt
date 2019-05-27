@@ -15,6 +15,6 @@ interface Api {
  //  @GET("{userId}/profile")
  //  fun getProfile(@Path("userId") userId: Int): Single<ProfileResponse>
 
-    @GET("posts")
-    fun getPosts(): Single<List<PostResponse>>
+    @GET("{userId}/posts")
+    fun getPosts(@Path("userId") userId: Int): Single<List<PostResponse>>
 }
