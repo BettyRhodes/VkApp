@@ -41,11 +41,10 @@ class LoginViewPresenter @Inject constructor(
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(
                     {
-
+                        router.newRootScreen(Screen.ProfileViewScreen())
                     },
                     {
-                        router.newRootScreen(Screen.ProfileViewScreen())
-                     //   viewState.showLoginError(message = R.string.loginError)
+                        viewState.showLoginError(message = R.string.loginError)
                         Timber.tag("okHttp").d(it.message.toString())
                     }
                 ).untilDestroy()

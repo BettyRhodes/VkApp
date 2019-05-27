@@ -3,6 +3,10 @@ package com.example.vkapi.data.response
 import com.google.gson.annotations.SerializedName
 
 class PostResponse(
+    @SerializedName("posts") val posts: List<Post>
+)
+
+class Post(
     @SerializedName("id") val id: Int,
     @SerializedName("profileName") val profileName: String,
     @SerializedName("message") val message: String,

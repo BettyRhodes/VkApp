@@ -1,5 +1,6 @@
 package com.example.vkapi.data.datasource
 
+import com.example.vkapi.dagger.MockQualifier
 import com.example.vkapi.data.network.Api
 import com.example.vkapi.data.response.ProfileResponse
 import io.reactivex.Single
@@ -9,7 +10,7 @@ interface ProfileDataSource {
     fun getProfile(): Single<ProfileResponse>
 }
 
-class ProfileDataSourceImpl @Inject constructor(private val api: Api): ProfileDataSource{
+class ProfileDataSourceImpl @Inject constructor(@MockQualifier private val api: Api): ProfileDataSource{
     override fun getProfile(): Single<ProfileResponse> =
             Single.just(
                 ProfileResponse(

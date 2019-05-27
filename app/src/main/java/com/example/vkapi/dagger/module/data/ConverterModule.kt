@@ -25,7 +25,7 @@ interface ConverterModule {
 
     @Reusable
     @Binds
-    fun bindPostsConverters(instance: PostConverter): Converter<List<PostResponse>, List<Post>>
+    fun bindPostsConverters(instance: PostConverter): Converter<PostResponse, List<Post>>
 
     //mb need fix
     @Reusable

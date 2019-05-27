@@ -5,9 +5,9 @@ import com.example.vkapi.domain.entity.Post
 import javax.inject.Inject
 
 class PostConverter @Inject constructor() :
-    Converter<@JvmSuppressWildcards List<PostResponse>, @JvmSuppressWildcards List<Post>> {
+    Converter<@JvmSuppressWildcards PostResponse, List<@JvmSuppressWildcards Post>> {
 
-    override fun convertTo(t: List<PostResponse>): List<Post> = t.map {
+    override fun convertTo(t: PostResponse): List<Post> = t.posts.map {
         Post(
             it.id,
             it.profileName,
