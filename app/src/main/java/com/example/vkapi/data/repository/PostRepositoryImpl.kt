@@ -18,7 +18,7 @@ class PostRepositoryImpl @Inject constructor(
         TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }
 
-    override fun getPosts(): Single<List<Post>> = postsDataSource.getPosts(1)
+    override fun getPosts(page: Int): Single<List<Post>> = postsDataSource.getPosts(1, page)
         .subscribeOn(Schedulers.io())
         .map(postConverter::convertTo)
 }

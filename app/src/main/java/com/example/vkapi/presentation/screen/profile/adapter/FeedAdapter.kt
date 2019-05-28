@@ -9,7 +9,7 @@ import com.example.vkapi.presentation.models.Profile
 import com.example.vkapi.presentation.extensions.inflate
 import kotlin.IllegalArgumentException
 
-class FeedAdapter: RecyclerView.Adapter<RecyclerView.ViewHolder>() {
+class FeedAdapter(private val loadPosts: () -> Unit): RecyclerView.Adapter<RecyclerView.ViewHolder>() {
     companion object {
         const val PROFILE = 1
         const val POST_MESSAGE = 2
@@ -56,6 +56,10 @@ class FeedAdapter: RecyclerView.Adapter<RecyclerView.ViewHolder>() {
     override fun getItemCount(): Int = items.size
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
+
+        if(items.size - position == 5)
+            loadPosts()
+
         when(holder){
             is ProfileHolder -> holder.bind(items[position] as Profile)
             is PostMessageHolder -> holder.bind(items[position] as PostMessage)

@@ -8,6 +8,7 @@ import kotlinx.android.synthetic.main.item_post_message.view.*
 
 class PostMessageHolder(view: View): RecyclerView.ViewHolder(view){
     fun bind(data: PostMessage) {
+        itemView.profileName.text = data.profileName
         itemView.itemPostMessage.text = data.message
         itemView.postDate.text = data.date
         itemView.likes.text = data.likes.toString()

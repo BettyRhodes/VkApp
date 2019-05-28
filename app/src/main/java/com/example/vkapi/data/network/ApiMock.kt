@@ -41,7 +41,7 @@ class ApiMock @Inject constructor(): Api{
             )
         )
 
-    override fun getPosts(userId: Int): Single<PostResponse> =
+    override fun getPosts(userId: Int, page: Int): Single<PostResponse> =
         Single.just(
             PostResponse((1..10).map {
                 listOf(

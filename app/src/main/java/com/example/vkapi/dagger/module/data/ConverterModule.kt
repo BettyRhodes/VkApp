@@ -27,7 +27,6 @@ interface ConverterModule {
     @Binds
     fun bindPostsConverters(instance: PostConverter): Converter<PostResponse, List<Post>>
 
-    //mb need fix
     @Reusable
     @Binds
     fun bindPostMessageConverter(instance: PostMessageConverter): PresentationConverter<Post, PostMessage>

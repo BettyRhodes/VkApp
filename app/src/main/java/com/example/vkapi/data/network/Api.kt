@@ -11,9 +11,9 @@ interface Api {
     @POST("login")
     fun login(@Field("email") email: String, @Field("password") password: String): Single<ProfileResponse>
 
-   @GET("{userId}/profile")
-   fun getProfile(@Path("userId") userId: Int): Single<ProfileResponse>
+    @GET("{userId}/profile")
+    fun getProfile(@Path("userId") userId: Int): Single<ProfileResponse>
 
     @GET("{userId}/posts")
-    fun getPosts(@Path("userId") userId: Int): Single<PostResponse>
+    fun getPosts(@Path("userId") userId: Int, @Path("page") page: Int): Single<PostResponse>
 }

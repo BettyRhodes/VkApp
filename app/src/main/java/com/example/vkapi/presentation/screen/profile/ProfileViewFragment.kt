@@ -18,7 +18,19 @@ import javax.inject.Inject
 class ProfileViewFragment: BaseFragment(R.layout.fragment_profile_view),
     ProfileView {
 
-    private val feedAdapter = FeedAdapter()
+    override fun showNetworkError() {
+
+    }
+
+    override fun showProgress() {
+        profileRefreshLayout.isRefreshing = true
+    }
+
+    override fun hideProgress() {
+        profileRefreshLayout.isRefreshing = false
+    }
+
+    private val feedAdapter = FeedAdapter{presenter.loadPosts()}
 
     @Inject
     @InjectPresenter

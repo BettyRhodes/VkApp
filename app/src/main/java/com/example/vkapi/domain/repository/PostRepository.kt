@@ -5,6 +5,6 @@ import io.reactivex.Single
 
 interface PostRepository {
 
-    fun getPosts(): Single<List<Post>>
+    fun getPosts(page: Int): Single<List<Post>>
     fun getPost(id: Int): Post
 }
