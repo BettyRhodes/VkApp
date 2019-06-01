@@ -24,7 +24,7 @@
             android:hint="@string/firstName">
 
         <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/editName"
+                android:id="@+id/profileEdit_Name"
                 android:inputType="text"
                 android:layout_marginStart="@dimen/text_margin_start"
                 android:layout_marginEnd="@dimen/text_margin_start"
@@ -42,10 +42,46 @@
             android:hint="@string/lastName">
 
         <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/editSurname"
+                android:id="@+id/profileEdit_Surname"
                 android:layout_marginStart="@dimen/text_margin_start"
                 android:layout_marginEnd="@dimen/text_margin_start"
                 android:textColor="@color/black"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textInputStatus"
+            android:layout_width="match_parent"
+            style="@style/ThemeOverlay.TextInputEditText.EditPage"
+            android:layout_height="wrap_content"
+            android:hint="@string/change_status">
+
+        <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/profileEdit_Status"
+                android:layout_marginStart="@dimen/text_margin_start"
+                android:layout_marginEnd="@dimen/text_margin_start"
+                android:textColor="@color/black"
+                android:inputType="text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textInputCity"
+            android:layout_width="match_parent"
+            style="@style/ThemeOverlay.TextInputEditText.EditPage"
+            android:layout_height="wrap_content"
+            android:hint="@string/city">
+
+        <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/profileEdit_City"
+                android:layout_marginStart="@dimen/text_margin_start"
+                android:layout_marginEnd="@dimen/text_margin_start"
+                android:textColor="@color/black"
+                android:inputType="text"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
 
@@ -59,7 +95,7 @@
             android:hint="@string/birthday">
 
         <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/editDate"
+                android:id="@+id/profileEdit_Date"
                 android:layout_marginStart="@dimen/text_margin_start"
                 android:layout_marginEnd="@dimen/text_margin_start"
                 android:textColor="@color/black"

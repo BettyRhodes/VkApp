@@ -41,33 +41,30 @@ class FeedAdapter(private val loadPosts: () -> Unit): RecyclerView.Adapter<Recyc
         else -> throw IllegalArgumentException("${items[position].javaClass} is not found")
     }
 
-  //  fun setProfile(profile: Profile){
-  //      if (items.isEmpty()) {
-  //          items.add(profile)
-  //      } else {
-  //          this.items[0] = profile
-  //      }
-  //      notifyItemChanged(0)
-  //  }
-
-    fun setProfile(profile: Profile, onFirstAttach: () -> Unit) {
-        if (items.isNotEmpty() && items[0] is Profile) {
-            items[0] = profile
-            notifyItemChanged(0)
+    fun setProfile(profile: Profile){
+        if (items.isEmpty()) {
+            items.add(profile)
         } else {
-            items.add(0, profile)
-            notifyItemInserted(0)
-            onFirstAttach()
+            this.items[0] = profile
         }
+        notifyItemChanged(0)
     }
 
+ //   fun setProfile(profile: Profile, onFirstAttach: () -> Unit) {
+ //       if (items.isNotEmpty() && items[0] is Profile) {
+ //           items[0] = profile
+ //           notifyItemChanged(0)
+ //       } else {
+ //           items.add(0, profile)
+ //           notifyItemInserted(0)
+ //           onFirstAttach()
+ //       }
+ //   }
+
     fun setItems(items: List<BaseItem>){
-        var profile: BaseItem? = null
-        if (items.isNotEmpty() && items[0] is Profile) {
-            profile = this.items[0]
-        }
+        val profile = this.items[0]
         this.items.clear()
-        profile?.let { this.items.add(it) }
+        this.items.add(profile)
         this.items.addAll(items)
         notifyDataSetChanged()
     }

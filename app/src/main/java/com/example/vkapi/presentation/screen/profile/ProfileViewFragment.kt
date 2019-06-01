@@ -21,10 +21,6 @@ import javax.inject.Inject
 class ProfileViewFragment: BaseFragment(R.layout.fragment_profile_view),
     ProfileView {
 
-    override fun showNetworkError() {
-
-    }
-
     override fun showProgress() {
         profileRefreshLayout.isRefreshing = true
         profileProgressBar.visibility = View.VISIBLE
@@ -56,14 +52,10 @@ class ProfileViewFragment: BaseFragment(R.layout.fragment_profile_view),
         profileFeed.adapter = feedAdapter
     }
 
-
-
     override fun showProfile(profile: Profile) {
         avatar.loadImage(profile.avatar)
         profileCollapsingToolbarLayout.title = "${profile.firstName} ${profile.lastName}"
-        feedAdapter.setProfile(profile){
-            profileFeed.smoothScrollToPosition(0)
-        }
+        feedAdapter.setProfile(profile)
     }
 
     override fun showFeed(items: List<PostMessage>) {

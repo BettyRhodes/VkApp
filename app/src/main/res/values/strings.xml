@@ -22,8 +22,10 @@
     <string name="loginError">Неверны email или пароль</string>
 
     <!--Edit-->
-    <string name="emptyName">Name is empty</string>
-    <string name="emptySurname">Surname is empty</string>
+    <string name="emptyName">Поле с именем пусто</string>
+    <string name="emptySurname">Поле с фамилией пусто</string>
+    <string name="emptyCity">Поле с городом пусто</string>
+    <string name="emptyDate">Поле с днеём рождения пусто</string>
     <string name="__birthday">Дата</string>
     <string name="posts">Записи</string>
     <string name="change_status">Изменить статус</string>

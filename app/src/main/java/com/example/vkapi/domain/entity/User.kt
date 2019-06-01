@@ -1,6 +1,6 @@
 package com.example.vkapi.domain.entity
 
-data class User(
+class User(
     val id: Int,
     val firstName: String,
     val lastName: String,

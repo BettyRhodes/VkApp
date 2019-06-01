@@ -8,7 +8,6 @@ import com.example.vkapi.presentation.models.Profile
 interface ProfileView: MvpView {
     fun showProfile(profile: Profile)
     fun showFeed(items: List<PostMessage>)
-    fun showNetworkError()
     fun showProgress()
     fun hideProgress()
 }
