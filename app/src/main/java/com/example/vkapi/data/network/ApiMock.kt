@@ -55,6 +55,7 @@ class ApiMock @Inject constructor(): Api{
                         "",
                         "14 мая 2019",
                         10,
+                        false,
                         "https://pbs.twimg.com/profile_images/1129032835006812160/FyzA9DWR_400x400.jpg"
                     ), Post(
                         4,
@@ -66,6 +67,7 @@ class ApiMock @Inject constructor(): Api{
                         "YNW Melly",
                         "13 мая 2019",
                         17,
+                        true,
                         "https://pbs.twimg.com/profile_images/1129032835006812160/FyzA9DWR_400x400.jpg"
                     )
                     , Post(
@@ -78,6 +80,7 @@ class ApiMock @Inject constructor(): Api{
                         "",
                         "12 мая 2019",
                         23,
+                        false,
                         "https://pbs.twimg.com/profile_images/1129032835006812160/FyzA9DWR_400x400.jpg"
                     ), Post(
                         4, "Юрий Пожидаев",
@@ -88,6 +91,7 @@ class ApiMock @Inject constructor(): Api{
                         "",
                         "11 мая 2019",
                         32,
+                        false,
                         "https://pbs.twimg.com/profile_images/1129032835006812160/FyzA9DWR_400x400.jpg"
                     ), Post(
                         5, "Юрий Пожидаев",
@@ -98,6 +102,7 @@ class ApiMock @Inject constructor(): Api{
                         "YNW Melly",
                         "5 мая 2019",
                         21,
+                        true,
                         "https://pbs.twimg.com/profile_images/1129032835006812160/FyzA9DWR_400x400.jpg"
                     )
                 )

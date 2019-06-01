@@ -9,6 +9,7 @@ class PostMessage(
     val musicName: String,
     val musicAuthor: String,
     val date: String,
-    val likes: Int,
+    var likes: Int,
+    var isLiked: Boolean,
     val avatar: String
 ): BaseItem(id)

@@ -16,5 +16,6 @@ class Post(
     @SerializedName("musicAuthor") val musicAuthor: String,
     @SerializedName("date") val date: String,
     @SerializedName("likes") val likes: Int,
+    @SerializedName("isLiked") val isLiked: Boolean,
     @SerializedName("avatar") val avatar: String
 )

@@ -10,5 +10,6 @@ data class Post(
     val musicAuthor: String,
     val date: String,
     val likes: Int,
+    val isLiked: Boolean,
     val avatar: String
 )

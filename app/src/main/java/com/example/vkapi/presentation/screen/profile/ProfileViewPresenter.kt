@@ -9,6 +9,7 @@ import com.example.vkapi.presentation.common.BasePresenter
 import com.example.vkapi.presentation.common.Paginator
 import com.example.vkapi.presentation.converter.PostMessageConverter
 import com.example.vkapi.presentation.converter.ProfileConverter
+import com.example.vkapi.presentation.models.PostMessage
 import com.example.vkapi.presentation.navigation.Screen
 import io.reactivex.android.schedulers.AndroidSchedulers
 import ru.terrakok.cicerone.Router
@@ -78,23 +79,7 @@ class ProfileViewPresenter @Inject constructor(
 
         getProfile()
         paginator.refresh()
-        //getWall()
     }
-
-   // private fun getWall() {
-   //     postRepository.getPosts()
-   //         .observeOn(AndroidSchedulers.mainThread())
-   //         .subscribe(
-   //             {
-   //                 viewState.showFeed(it.map { post ->
-   //                     postMessageConverter.convertTo(post)
-   //                 })
-   //             },
-   //             {
-//
-   //             }
-   //         ).untilDestroy()
-   // }
 
     private fun getProfile() {
         profileRepository.getProfile()
