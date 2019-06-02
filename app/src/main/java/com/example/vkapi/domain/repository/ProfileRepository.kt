@@ -6,4 +6,5 @@ import io.reactivex.Single
 interface ProfileRepository {
 
     fun getProfile(): Single<User>
+    fun saveEdit(user: User): Single<User>
 }

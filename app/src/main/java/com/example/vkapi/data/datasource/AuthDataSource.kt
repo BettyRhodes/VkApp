@@ -13,5 +13,4 @@ interface AuthDataSource {
 class AuthDataSourceImpl @Inject constructor(@MockQualifier private val api: Api): AuthDataSource{
     override fun login(email: String, password: String): Single<ProfileResponse> =
             api.login(email, password)
-
 }

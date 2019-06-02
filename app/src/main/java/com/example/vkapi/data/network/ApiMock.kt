@@ -1,28 +1,51 @@
 package com.example.vkapi.data.network
 
 import android.annotation.SuppressLint
+import android.content.SharedPreferences
+import com.example.vkapi.data.request.ProfileRequest
 import com.example.vkapi.data.response.Post
 import com.example.vkapi.data.response.PostResponse
 import com.example.vkapi.data.response.ProfileResponse
 import io.reactivex.Single
+import java.util.concurrent.TimeUnit
 import javax.inject.Inject
 
-class ApiMock @Inject constructor(): Api{
+const val FIRST_NAME = "first_name"
+const val LAST_NAME = "last_name"
+const val HOME_TOWN = "home_town"
+const val BIRTH_DATE = "birth_date"
+const val STATUS = "status"
+const val AVATAR = "avatar"
+
+class ApiMock @Inject constructor(private val sharedPreferences: SharedPreferences): Api{
+
+    override fun saveEdit(userId: Int, profileRequest: ProfileRequest): Single<ProfileResponse> {
+        sharedPreferences.edit()
+            .putString(FIRST_NAME, profileRequest.firstName)
+            .putString(LAST_NAME, profileRequest.lastName)
+            .putString(AVATAR, profileRequest.avatar)
+            .putString(HOME_TOWN, profileRequest.home)
+            .putString(BIRTH_DATE, profileRequest.birthday)
+            .putString(STATUS, profileRequest.status)
+            .apply()
+
+        return getProfile(userId)
+    }
 
     @SuppressLint("CheckResult")
     override fun login(email: String, password: String): Single<ProfileResponse> =
         if(email == "123" && password == "1234"){
-            Single.just(
-                ProfileResponse(
-                    1,
-                    "Юрий",
-                    "Пожидаев",
-                    "https://pbs.twimg.com/profile_images/1129032835006812160/FyzA9DWR_400x400.jpg",
-                    "Атланта",
-                    "30 июня 1998",
-                    ""
-                )
-            )
+            if(!sharedPreferences.contains("first_name")){
+                sharedPreferences.edit()
+                    .putString(FIRST_NAME, "Юрий")
+                    .putString(LAST_NAME, "Пожидаев")
+                    .putString(AVATAR, "https://pbs.twimg.com/profile_images/1129032835006812160/FyzA9DWR_400x400.jpg")
+                    .putString(HOME_TOWN, "Атланта")
+                    .putString(BIRTH_DATE, "30.06.1998")
+                    .putString(STATUS, "")
+                    .apply()
+            }
+            getProfile(3)
         }else{
             Single.error(RuntimeException("User not found"))
         }
@@ -31,13 +54,13 @@ class ApiMock @Inject constructor(): Api{
     override fun getProfile(userId: Int): Single<ProfileResponse> =
         Single.just(
             ProfileResponse(
-                1,
-                "Юрий",
-                "Пожидаев",
+                userId,
+                sharedPreferences.getString(FIRST_NAME, "").orEmpty(),
+                sharedPreferences.getString(LAST_NAME, "").orEmpty(),
                 "https://pbs.twimg.com/profile_images/1129032835006812160/FyzA9DWR_400x400.jpg",
-                "Атланта",
-                "30 июня 1998",
-                ""
+                sharedPreferences.getString(HOME_TOWN, "").orEmpty(),
+                sharedPreferences.getString(BIRTH_DATE, "").orEmpty(),
+                sharedPreferences.getString(STATUS, "").orEmpty()
             )
         )
 
@@ -47,7 +70,7 @@ class ApiMock @Inject constructor(): Api{
                 listOf(
                     Post(
                         1,
-                        "Юрий Пожидаев",
+                        "${sharedPreferences.getString(FIRST_NAME, "").orEmpty()} ${sharedPreferences.getString(LAST_NAME, "").orEmpty()}",
                         "Только сообщение",
                         "",
                         "",
@@ -59,7 +82,7 @@ class ApiMock @Inject constructor(): Api{
                         "https://pbs.twimg.com/profile_images/1129032835006812160/FyzA9DWR_400x400.jpg"
                     ), Post(
                         4,
-                        "Юрий Пожидаев",
+                        "${sharedPreferences.getString(FIRST_NAME, "").orEmpty()} ${sharedPreferences.getString(LAST_NAME, "").orEmpty()}",
                         "Классная песня",
                         "",
                         "",
@@ -72,7 +95,7 @@ class ApiMock @Inject constructor(): Api{
                     )
                     , Post(
                         2,
-                        "Юрий Пожидаев",
+                        "${sharedPreferences.getString(FIRST_NAME, "").orEmpty()} ${sharedPreferences.getString(LAST_NAME, "").orEmpty()}",
                         "Пост с картинкой",
                         "https://avatars.mds.yandex.net/get-pdb/199965/10d413ef-60a6-4d84-b4e8-75cf6e7a86d9/s1200",
                         "",
@@ -83,7 +106,8 @@ class ApiMock @Inject constructor(): Api{
                         false,
                         "https://pbs.twimg.com/profile_images/1129032835006812160/FyzA9DWR_400x400.jpg"
                     ), Post(
-                        4, "Юрий Пожидаев",
+                        4,
+                        "${sharedPreferences.getString(FIRST_NAME, "").orEmpty()} ${sharedPreferences.getString(LAST_NAME, "").orEmpty()}",
                         "Пост с видео",
                         "",
                         "Video",
@@ -94,7 +118,8 @@ class ApiMock @Inject constructor(): Api{
                         false,
                         "https://pbs.twimg.com/profile_images/1129032835006812160/FyzA9DWR_400x400.jpg"
                     ), Post(
-                        5, "Юрий Пожидаев",
+                        5,
+                        "${sharedPreferences.getString(FIRST_NAME, "").orEmpty()} ${sharedPreferences.getString(LAST_NAME, "").orEmpty()}",
                         "Полный пост",
                         "https://avatars.mds.yandex.net/get-pdb/199965/10d413ef-60a6-4d84-b4e8-75cf6e7a86d9/s1200",
                         "Video",
@@ -108,5 +133,6 @@ class ApiMock @Inject constructor(): Api{
                 )
             }.flatten()
         )
-        )
+        ).delay(1, TimeUnit.SECONDS)
+
 }

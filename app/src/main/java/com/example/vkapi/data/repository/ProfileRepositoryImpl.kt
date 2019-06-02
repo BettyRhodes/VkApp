@@ -14,6 +14,11 @@ class ProfileRepositoryImpl @Inject constructor(
     private val userConverter: Converter<ProfileResponse, User>
 ): ProfileRepository {
 
+    override fun saveEdit(user: User): Single<User> =
+        profileDataSource.saveEdit(user)
+            .subscribeOn(Schedulers.io())
+            .map(userConverter::convertTo)
+
     override fun getProfile(): Single<User> =
             profileDataSource.getProfile()
                 .subscribeOn(Schedulers.io())

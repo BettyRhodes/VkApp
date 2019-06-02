@@ -15,12 +15,13 @@ class SessionRepositoryImpl @Inject constructor(
     private val authDataSource: AuthDataSource,
     private val sessionDataSource: SessionDataSource,
     private val userConverter: Converter<ProfileResponse, User>
-) : SessionRepository{
+) : SessionRepository {
 
     override fun login(email: String, password: String): Single<User> =
         authDataSource.login(email, password)
-        .subscribeOn(Schedulers.io())
-        .map(userConverter::convertTo)
+            .subscribeOn(Schedulers.io())
+            .map(userConverter::convertTo)
+            .doAfterSuccess{sessionDataSource.setToken("token")}
 
     override fun isAuth(): Boolean = sessionDataSource.getToken().isNotEmpty()
 }

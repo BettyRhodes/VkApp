@@ -1,5 +1,6 @@
 package com.example.vkapi.data.network
 
+import com.example.vkapi.data.request.ProfileRequest
 import com.example.vkapi.data.response.PostResponse
 import com.example.vkapi.data.response.ProfileResponse
 import io.reactivex.Single
@@ -16,4 +17,7 @@ interface Api {
 
     @GET("{userId}/posts")
     fun getPosts(@Path("userId") userId: Int, @Path("page") page: Int): Single<PostResponse>
+
+    @POST("{userId}/profile")
+    fun saveEdit(@Path("userId") userId: Int, @Body profileRequest: ProfileRequest): Single<ProfileResponse>
 }

@@ -3,13 +3,15 @@ package com.example.vkapi.presentation.screen.profile
 import android.annotation.SuppressLint
 import com.arellomobile.mvp.InjectViewState
 import com.example.vkapi.domain.entity.Post
+import com.example.vkapi.domain.entity.User
 import com.example.vkapi.domain.repository.PostRepository
 import com.example.vkapi.domain.repository.ProfileRepository
 import com.example.vkapi.presentation.common.BasePresenter
 import com.example.vkapi.presentation.common.Paginator
 import com.example.vkapi.presentation.converter.PostMessageConverter
 import com.example.vkapi.presentation.converter.ProfileConverter
-import com.example.vkapi.presentation.models.PostMessage
+import com.example.vkapi.presentation.converter.TwoWayPresentationConverter
+import com.example.vkapi.presentation.models.Profile
 import com.example.vkapi.presentation.navigation.Screen
 import io.reactivex.android.schedulers.AndroidSchedulers
 import ru.terrakok.cicerone.Router
@@ -20,7 +22,7 @@ class ProfileViewPresenter @Inject constructor(
     private val router: Router,
     private val postRepository: PostRepository,
     private val profileRepository: ProfileRepository,
-    private val profileConverter: ProfileConverter,
+    private val profileConverter: TwoWayPresentationConverter<User, Profile>,
     private val postMessageConverter: PostMessageConverter
 ) : BasePresenter<ProfileView>() {
 
@@ -73,15 +75,7 @@ class ProfileViewPresenter @Inject constructor(
         paginator.refresh()
     }
 
-    @SuppressLint("CheckResult")
-    override fun onFirstViewAttach() {
-        super.onFirstViewAttach()
-
-        getProfile()
-        paginator.refresh()
-    }
-
-    private fun getProfile() {
+    fun getProfile() {
         profileRepository.getProfile()
             .observeOn(AndroidSchedulers.mainThread())
             .subscribe(

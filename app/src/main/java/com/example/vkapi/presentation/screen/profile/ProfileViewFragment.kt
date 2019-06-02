@@ -18,7 +18,7 @@ import kotlinx.android.synthetic.main.fragment_profile_view.*
 import kotlinx.android.synthetic.main.item_post_message.*
 import javax.inject.Inject
 
-class ProfileViewFragment: BaseFragment(R.layout.fragment_profile_view),
+class ProfileViewFragment : BaseFragment(R.layout.fragment_profile_view),
     ProfileView {
 
     override fun showProgress() {
@@ -31,7 +31,7 @@ class ProfileViewFragment: BaseFragment(R.layout.fragment_profile_view),
         profileProgressBar.visibility = View.GONE
     }
 
-    private val feedAdapter = FeedAdapter{presenter.loadPosts()}
+    private val feedAdapter = FeedAdapter { presenter.loadPosts() }
 
     @Inject
     @InjectPresenter
@@ -47,7 +47,7 @@ class ProfileViewFragment: BaseFragment(R.layout.fragment_profile_view),
         profileRefreshLayout.setOnRefreshListener(presenter::refreshPosts)
     }
 
-    private fun initFeed(){
+    private fun initFeed() {
         profileFeed.layoutManager = LinearLayoutManager(context)
         profileFeed.adapter = feedAdapter
     }
@@ -62,10 +62,16 @@ class ProfileViewFragment: BaseFragment(R.layout.fragment_profile_view),
         feedAdapter.setItems(items)
     }
 
-    private fun initToolbar(){
+    override fun onResume() {
+        super.onResume()
+        presenter.getProfile()
+        presenter.refreshPosts()
+    }
+
+    private fun initToolbar() {
         profileToolbar.inflateMenu(R.menu.menu_profile_view)
         profileToolbar.setOnMenuItemClickListener {
-            when(it.itemId){
+            when (it.itemId) {
                 R.id.action_profile_edit -> presenter.profileEdit()
                 R.id.action_logout -> presenter.logout()
             }

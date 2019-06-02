@@ -54,12 +54,18 @@ class EditProfileFragment : BaseFragment(R.layout.fragment_edit_profile),
         editViewToolbar.inflateMenu(R.menu.menu_edit_view)
         editViewToolbar.setOnMenuItemClickListener {
             when (it.itemId) {
-                R.id.saveChanges -> presenter.editProfile(
+                R.id.saveChanges -> {
+                    val profile = Profile(
+                    0,
                     profileEdit_Name.text.toString(),
                     profileEdit_Surname.text.toString(),
+                    "https://pbs.twimg.com/profile_images/1129032835006812160/FyzA9DWR_400x400.jpg",
                     profileEdit_City.text.toString(),
-                    profileEdit_Date.text.toString()
-                )
+                    profileEdit_Date.text.toString(),
+                    profileEdit_Status.text.toString()
+                    )
+                    presenter.saveEdit(profile)
+                }
             }
             true
         }
