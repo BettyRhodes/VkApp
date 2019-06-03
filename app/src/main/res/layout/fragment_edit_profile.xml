@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white">
+
+    <androidx.appcompat.widget.Toolbar
+            android:id="@+id/editViewToolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimary"
+            android:theme="@style/Base.ThemeOverlay.AppCompat.Dark.ActionBar"
+            app:popupTheme="@style/MenuStyle"
+            app:title="@string/edit"
+            app:titleTextColor="@color/white"/>
+
+    <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textInputName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/ThemeOverlay.TextInputEditText.EditPage"
+            android:hint="@string/firstName">
+
+        <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/profileEdit_Name"
+                android:inputType="text"
+                android:layout_marginStart="@dimen/text_margin_start"
+                android:layout_marginEnd="@dimen/text_margin_start"
+                android:textColor="@color/black"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textInputSurname"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/ThemeOverlay.TextInputEditText.EditPage"
+            android:hint="@string/lastName">
+
+        <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/profileEdit_Surname"
+                android:layout_marginStart="@dimen/text_margin_start"
+                android:layout_marginEnd="@dimen/text_margin_start"
+                android:textColor="@color/black"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textInputStatus"
+            android:layout_width="match_parent"
+            style="@style/ThemeOverlay.TextInputEditText.EditPage"
+            android:layout_height="wrap_content"
+            android:hint="@string/change_status">
+
+        <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/profileEdit_Status"
+                android:layout_marginStart="@dimen/text_margin_start"
+                android:layout_marginEnd="@dimen/text_margin_start"
+                android:textColor="@color/black"
+                android:inputType="text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textInputCity"
+            android:layout_width="match_parent"
+            style="@style/ThemeOverlay.TextInputEditText.EditPage"
+            android:layout_height="wrap_content"
+            android:hint="@string/city">
+
+        <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/profileEdit_City"
+                android:layout_marginStart="@dimen/text_margin_start"
+                android:layout_marginEnd="@dimen/text_margin_start"
+                android:textColor="@color/black"
+                android:inputType="text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textInputBirthday"
+            android:layout_width="match_parent"
+            style="@style/ThemeOverlay.TextInputEditText.EditPage"
+            android:layout_height="wrap_content"
+            android:hint="@string/birthday">
+
+        <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/profileEdit_Date"
+                android:layout_marginStart="@dimen/text_margin_start"
+                android:layout_marginEnd="@dimen/text_margin_start"
+                android:textColor="@color/black"
+                android:inputType="text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:focusable="false"/>
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+</LinearLayout>

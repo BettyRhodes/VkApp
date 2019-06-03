@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white">
+
+    <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/profileAppBarLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        <com.google.android.material.appbar.CollapsingToolbarLayout
+                android:id="@+id/profileCollapsingToolbarLayout"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/height_profile_image"
+                app:collapsedTitleTextAppearance="@style/Profile"
+                app:contentScrim="@color/colorPrimary"
+                app:expandedTitleMarginBottom="@dimen/collapsing_expanded_title_margin_bottom"
+                app:expandedTitleMarginStart="@dimen/collapsing_expanded_title_margin_start"
+                app:expandedTitleTextAppearance="@style/ProfileExpanded"
+                app:layout_scrollFlags="scroll|exitUntilCollapsed"
+                tools:title="Юрий Пожидаев">
+
+            <ImageView
+                    android:id="@+id/avatar"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="centerCrop"
+                    tools:src="@tools:sample/avatars" />
+
+            <androidx.appcompat.widget.Toolbar
+                    android:id="@+id/profileToolbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="?android:attr/actionBarSize"
+                    app:layout_collapseMode="pin" />
+
+        </com.google.android.material.appbar.CollapsingToolbarLayout>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <ProgressBar
+            android:id="@+id/profileProgressBar"
+            android:visibility="gone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"/>
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+            android:id="@+id/profileRefreshLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:behavior_overlapTop="@dimen/collapsing_toolbar_overlap"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+    <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/profileFeed"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:behavior_overlapTop="@dimen/collapsing_toolbar_overlap"
+            tools:listitem="@layout/item_post_message" />
+
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

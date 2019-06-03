@@ -1,0 +1,32 @@
+<resources>
+    <string name="app_name">Vk Client</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="name">Name</string>
+    <string name="birthday">День рождения</string>
+    <string name="_birthday">Дата рождения</string>
+    <string name="city">Город</string>
+    <string name="email">Email или телефон</string>
+    <string name="password">Пароль</string>
+    <string name="input">войти</string>
+    <string name="login">Login</string>
+    <string name="lastName">Фамилия</string>
+    <string name="firstName">Имя</string>
+    <string name="profile">Профиль</string>
+    <string name="edit">Редактировать</string>
+
+    <!--Login-->
+    <string name="emptyField">Пустое поле</string>
+    <string name="invalidPassword">Пароль должен быть больше 3 символов</string>
+    <string name="loginError">Неверны email или пароль</string>
+
+    <!--Edit-->
+    <string name="emptyName">Поле с именем пусто</string>
+    <string name="emptySurname">Поле с фамилией пусто</string>
+    <string name="emptyCity">Поле с городом пусто</string>
+    <string name="emptyDate">Поле с днеём рождения пусто</string>
+    <string name="__birthday">Дата</string>
+    <string name="posts">Записи</string>
+    <string name="change_status">Изменить статус</string>
+</resources>
